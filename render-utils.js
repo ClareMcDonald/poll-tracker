@@ -1,23 +1,36 @@
 export function renderPoll(poll) {
     const pollContainer = document.createElement('div');
     const pollQuestionSpot = document.createElement('div');
-    const option1Spot = document.createElement('p');
-    const option2Spot = document.createElement('p');
-    const option1VotesSpot = document.createElement('p');
-    const option2VotesSpot = document.createElement('p');
+    const option1Div = renderOption(poll.option1, poll.votes1);
+    const option2Div = renderOption(poll.option2, poll.option2);
+    //const option1Spot = document.createElement('p');
+    //const option2Spot = document.createElement('p');
+    //const option1VotesSpot = document.createElement('p');
+    //const option2VotesSpot = document.createElement('p');
 
     pollContainer.classList.add('poll');
     pollQuestionSpot.textContent = poll.question;
-    option1Spot.textContent = poll.option1Title;
-    option2Spot.textContent = poll.option2Title;
-    option1VotesSpot.textConent = poll.option1Votes;
-    option2VotesSpot.textContent = poll.option2Votes;
+    //option1Spot.textContent = poll.option1Title;
+    //option2Spot.textContent = poll.option2Title;
+    //option1VotesSpot.textConent = poll.option1Votes;
+    //option2VotesSpot.textContent = poll.option2Votes;
 
-    pollContainer.append(pollQuestionSpot, option1Spot, option2Spot, option1VotesSpot, option2VotesSpot);
+    //pollContainer.append(pollQuestionSpot, option1Spot, option2Spot, option1VotesSpot, option2VotesSpot);
 
+    pollContainer.append(option1Div, option2Div);
+    
     return pollContainer;
 }
 
-export function renderOption(name, score) {
+export function renderOption(option, votes) {
+    const optionDiv = document.createElement('div');
+    const optionSpot = document.createElement('p');
+    const optionVotesSpot = document.createElement('p');
 
+    optionSpot.textContent = option;
+    optionVotesSpot.textConent = votes;
+    
+    optionDiv.append(optionSpot, optionVotesSpot);
+
+    return optionDiv;
 }
