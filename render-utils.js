@@ -18,7 +18,6 @@ export function renderPoll(poll) {
     return pollContainer;
 }
 
-
 export function renderOption(name, score) {
 
 }

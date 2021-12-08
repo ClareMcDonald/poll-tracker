@@ -42,6 +42,8 @@ let option2Title = '';
 let option1Votes = 0;
 let option2Votes = 0;
 
+let allPolls = [];
+
 // set event listeners 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -52,7 +54,6 @@ form.addEventListener('submit', (e) => {
     option2Title = data.get('create-option-2');
 
 
-    //const poll = makePoll();
     //renderPoll(poll);
     displayCurrentPoll();
 });
@@ -82,7 +83,14 @@ undo2Button.addEventListener('click', () => {
 });
 
 closePollButton.addEventListener('click', () => {
+    form.reset();
 
+    const poll = makePoll();
+  
+    resetState();
+
+    allPolls.push(poll);
+    displayAllPolls();
 });
 
 
@@ -106,10 +114,22 @@ function displayCurrentPoll() {
     option2VotesEl.textConent = option2Votes;
 }
 
-//displayAllPolls() {
+function displayAllPolls() {
+    pastPollsEl.textContent = '';
+  
+    for (let poll of allPolls) {
+        const pollDisplay = renderPoll(poll);
+        pastPollsEl.append(pollDisplay);
+    }
+}
 
-//}
-
+function resetState() {
+    question = '';
+    option1Title = '';
+    option2Title = '';
+    option1Votes = 0;
+    option2Votes = 0;
+}
 
 
   // get user input
