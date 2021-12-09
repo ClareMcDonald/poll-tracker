@@ -24,6 +24,38 @@
             <h2>
                 Welcome to Poll Tracker!
             </h2>
+            <form id = "create-poll">
+                <label>
+                    Question
+                    <input id = "create-question" name = "create-question"/>
+                </label>
+                <label>
+                    Option 1
+                    <input id = "create-option-1" name = "create-option-1"/>
+                </label>
+                <label>
+                    Option 2
+                    <input id = "create-option-2" name = "create-option-2"/>
+                </label>
+
+                <button id = "create-poll-button">Create</button>
+            </form>
+
+            <div id = "current-poll"> Current Poll
+                <div id = "current-question"></div>
+                <div id = "current-option-1"></div>
+                <div id = "current-option-1-votes"></div>
+                <div id = "current-option-2"></div>
+                <div id = "current-option-2-votes"></div>
+                <button id = "vote-1">Add</button>
+                <button id = "vote-2">Add</button>
+                <button id = "undo-1">Subtract</button>
+                <button id = "undo-2">Subtract</button>
+            </div>
+
+            <button id = "close-poll-button">Close Poll</button>
+
+            <div id = "past-polls">Past Polls</div>
 
         </section>
     </main>
