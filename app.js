@@ -3,7 +3,6 @@ import { renderPoll } from './render-utils.js';
 
 const form = document.querySelector('form');
 
-//const questionEl = document.getElementById('create-question');
 const currentQuestion = document.getElementById('current-question');
 const option1TitleEl = document.getElementById('current-option-1');
 const option1VotesEl = document.getElementById('current-option-1-votes');
@@ -89,7 +88,7 @@ closePollButton.addEventListener('click', () => {
   
 
     allPolls.push(poll);
-console.log(allPolls)
+
     resetState();
 
     displayCurrentPoll();
@@ -124,7 +123,6 @@ function displayAllPolls() {
     for (let poll of allPolls) {
         const pollDisplay = renderPoll(poll);
         pastPollsEl.append(pollDisplay);
-        console.log(poll)
     }
 }
 

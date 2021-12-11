@@ -18,7 +18,7 @@ export function renderPoll(poll) {
     //pollContainer.append(pollQuestionSpot, option1Spot, option2Spot, option1VotesSpot, option2VotesSpot);
 
     pollContainer.append(pollQuestionSpot, option1Div, option2Div);
-    console.log(pollContainer, 'pollContainer')
+
     return pollContainer;
 }
 
