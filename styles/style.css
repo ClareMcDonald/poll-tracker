@@ -89,3 +89,26 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
+
+.create {
+    border: 5px solid lightblue;
+    width: 70%;
+}
+
+.current {
+    border: 5px solid lightblue;
+    width: 70%;
+}
+
+.past {
+    border: 5px solid lightblue;
+    width: 70%;
+}
+
+button {
+    background-color: rgb(204, 230, 238);
+}
+
+h3 {
+    color: rgb(47, 106, 126);
+}
