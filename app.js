@@ -3,13 +3,12 @@ import { renderPoll } from './render-utils.js';
 
 const form = document.querySelector('form');
 
-const questionEl = document.getElementById('create-question');
+const currentQuestion = document.getElementById('current-question');
 const option1TitleEl = document.getElementById('current-option-1');
 const option1VotesEl = document.getElementById('current-option-1-votes');
 const option2TitleEl = document.getElementById('current-option-2');
 const option2VotesEl = document.getElementById('current-option-2-votes');
 
-const createPollButton = document.getElementById('create-poll');
 const vote1Button = document.getElementById('vote-1');
 const vote2Button = document.getElementById('vote-2');
 const undo1Button = document.getElementById('undo-1');
@@ -48,7 +47,7 @@ let allPolls = [];
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = new FormData(form);
-  
+
     question = data.get('create-question');
     option1Title = data.get('create-option-1');
     option2Title = data.get('create-option-2');
@@ -78,7 +77,7 @@ undo1Button.addEventListener('click', () => {
 
 undo2Button.addEventListener('click', () => {
     option2Votes--;
-  
+
     option2VotesEl.textContent = option2Votes;
 });
 
@@ -87,9 +86,13 @@ closePollButton.addEventListener('click', () => {
 
     const poll = makePoll();
   
-    resetState();
 
     allPolls.push(poll);
+
+    resetState();
+
+    displayCurrentPoll();
+
     displayAllPolls();
 });
 
@@ -101,17 +104,17 @@ function makePoll() {
         option1Title: option1Title,
         option2Title: option2Title,
         option1Votes: option1Votes,
-        option2Votes: option2Votes
+        option2Votes: option2Votes,
     };
   
 }
 
 function displayCurrentPoll() {
-    questionEl.textContent = question;
+    currentQuestion.textContent = question;
     option1TitleEl.textContent = option1Title;
     option2TitleEl.textContent = option2Title;
-    option1VotesEl.textContnet = option1Votes;
-    option2VotesEl.textConent = option2Votes;
+    option1VotesEl.textContent = option1Votes;
+    option2VotesEl.textContent = option2Votes;
 }
 
 function displayAllPolls() {

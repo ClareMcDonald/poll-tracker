@@ -19,11 +19,8 @@
         </div>
     </header>
     <main>
-        <section class="main-section">
-  
-            <h2>
-                Welcome to Poll Tracker!
-            </h2>
+        <section class = "create">
+            <h3>Create a Poll</h3>
             <form id = "create-poll">
                 <label>
                     Question
@@ -40,8 +37,10 @@
 
                 <button id = "create-poll-button">Create</button>
             </form>
-
-            <div id = "current-poll"> Current Poll
+        </section>
+        <section class = "current">
+            <div id = "current-poll"> 
+                <h3>Current Poll</h3>
                 <div id = "current-question"></div>
                 <div id = "current-option-1"></div>
                 <div id = "current-option-1-votes"></div>
@@ -54,9 +53,10 @@
             </div>
 
             <button id = "close-poll-button">Close Poll</button>
-
-            <div id = "past-polls">Past Polls</div>
-
+        </section>
+        <section class = "past">
+            <h3>Past Polls</h3>
+            <div id = "past-polls"></div>
         </section>
     </main>
     <footer>
